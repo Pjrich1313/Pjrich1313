@@ -22,7 +22,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          status="$(gh api "repos/${{ github.repository }}" --jq '.security_and_analysis.dependency_graph.status // "unknown"' || echo "unknown")"
+          if ! status="$(gh api "repos/${{ github.repository }}" --jq '.security_and_analysis.dependency_graph.status // "unknown"' 2>/dev/null)"; then
+            echo "::warning::Unable to read dependency graph status via API. Defaulting to 'unknown' and skipping dependency review."
+            status="unknown"
+          fi
           echo "status=${status}" >> "$GITHUB_OUTPUT"
           echo "Dependency graph status: ${status}"
 
@@ -33,7 +36,7 @@ jobs:
       - name: Dependency review skipped
         if: ${{ steps.dependency_graph.outputs.status != 'enabled' }}
         run: |
-          echo "Dependency review skipped because dependency graph is not enabled for this repository."
+          echo "Dependency review skipped because dependency graph status is '${{ steps.dependency_graph.outputs.status }}' (expected: 'enabled')."
 
   auto_merge:
     name: Auto-merge PR
