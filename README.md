@@ -14,6 +14,7 @@ I'm currently looking to compensate contributors and collaborators for their tim
 
 Best regards,  
 Pamela (Pjrich1313)
+<!--
 Pjrich1313/Pjrich1313 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
---->
+-->
