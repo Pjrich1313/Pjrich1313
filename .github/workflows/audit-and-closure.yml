@@ -20,8 +20,8 @@ jobs:
       - name: Dependency review
         uses: actions/dependency-review-action@v4
 
-  merge_and_close:
-    name: Merge and close PR
+  auto_merge:
+    name: Auto-merge PR
     if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'auto-merge') }}
     needs: audit
     runs-on: ubuntu-latest
