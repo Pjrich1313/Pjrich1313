@@ -1,0 +1,37 @@
+name: Audit and Closure
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Dependency review
+        uses: actions/dependency-review-action@v4
+
+  merge_and_close:
+    name: Merge and close PR
+    if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'auto-merge') }}
+    needs: audit
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Merge pull request
+        uses: peter-evans/merge-pull-request@v3
+        with:
+          pull-request: ${{ github.event.pull_request.number }}
+          merge-method: squash
+          delete-branch: true
