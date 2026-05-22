@@ -17,8 +17,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check dependency graph status
+        id: dependency_graph
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! status="$(gh api "repos/${{ github.repository }}" --jq '.security_and_analysis.dependency_graph.status // "unknown"' 2>/dev/null)"; then
+            echo "::warning::Unable to read dependency graph status via API. Defaulting to 'unknown' and skipping dependency review."
+            status="unknown"
+          fi
+          echo "status=${status}" >> "$GITHUB_OUTPUT"
+          echo "Dependency graph status: ${status}"
+
       - name: Dependency review
+        if: ${{ steps.dependency_graph.outputs.status == 'enabled' }}
         uses: actions/dependency-review-action@v4
+
+      - name: Dependency review skipped
+        if: ${{ steps.dependency_graph.outputs.status != 'enabled' }}
+        run: |
+          echo "Dependency review skipped because dependency graph status is '${{ steps.dependency_graph.outputs.status }}' (expected: 'enabled')."
 
   auto_merge:
     name: Auto-merge PR
