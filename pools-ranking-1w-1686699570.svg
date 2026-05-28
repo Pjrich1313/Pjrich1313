@@ -1,0 +1,30 @@
+<svg width="370" height="230" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 370 230">
+<rect width="370" height="230" x="0" y="0" id="0" fill="#11131f"></rect>
+<polyline points="203.8 181.4 207.9 195.8 306 195.8" fill="none" stroke="#8E24AA" stroke-width="2"></polyline>
+<polyline points="133.9 161.4 122.8 171.5 59.4 171.5" fill="none" stroke="#5E35B1" stroke-width="2"></polyline>
+<polyline points="116 116.6 101 117 65.6 117" fill="none" stroke="#3949AB" stroke-width="2"></polyline>
+<polyline points="124.9 81.2 111.8 73.8 63 73.8" fill="none" stroke="#1E88E5" stroke-width="2"></polyline>
+<polyline points="140.7 62.1 131 50.7 86.6 50.7" fill="none" stroke="#039BE5" stroke-width="2"></polyline>
+<polyline points="165 49 160.7 34.6 50 34.6" fill="none" stroke="#6b6b6b" stroke-width="2"></polyline>
+<path d="M240.6025 154.1326A1 1 0 0 1 240.8362 155.5378A69 69 0 0 1 158.7035 178.7926A1 1 0 0 1 158.1658 177.4734L177.8082 131.7434A1 1 0 0 1 179.0708 131.199A17.25 17.25 0 0 0 198.5414 125.6861A1 1 0 0 1 199.9019 125.4878Z" fill="#8E24AA" stroke="#000" stroke-linejoin="round"></path>
+<path d="M158.1658 177.4734A1 1 0 0 1 156.8388 177.9917A69 69 0 0 1 119.5852 136.9522A1 1 0 0 1 120.229 135.6814L167.6409 120.5428A1 1 0 0 1 168.8795 121.1395A17.25 17.25 0 0 0 177.3338 130.4529A1 1 0 0 1 177.8082 131.7434Z" fill="#5E35B1" stroke="#000" stroke-linejoin="round"></path>
+<path d="M120.229 135.6814A1 1 0 0 1 118.9679 135.0189A69 69 0 0 1 118.0926 98.1358A1 1 0 0 1 119.3209 97.4142L167.3975 110.2869A1 1 0 0 1 168.1175 111.4582A17.25 17.25 0 0 0 168.3045 119.3387A1 1 0 0 1 167.6409 120.5428Z" fill="#3949AB" stroke="#000" stroke-linejoin="round"></path>
+<path d="M119.3209 97.4142A1 1 0 0 1 118.6175 96.1755A69 69 0 0 1 134.4115 68.0766A1 1 0 0 1 135.8354 68.0336L171.8235 102.4126A1 1 0 0 1 171.8926 103.7858A17.25 17.25 0 0 0 168.6065 109.6321A1 1 0 0 1 167.3975 110.2869Z" fill="#1E88E5" stroke="#000" stroke-linejoin="round"></path>
+<path d="M135.8354 68.0336A1 1 0 0 1 135.8133 66.6092A69 69 0 0 1 145.9411 58.1194A1 1 0 0 1 147.3398 58.3899L174.9067 99.828A1 1 0 0 1 174.6728 101.1829A17.25 17.25 0 0 0 173.1984 102.4189A1 1 0 0 1 171.8235 102.4126Z" fill="#039BE5" stroke="#000" stroke-linejoin="round"></path>
+<path d="M147.3398 58.3899A1 1 0 0 1 147.6308 56.9953A69 69 0 0 1 183.9853 46.0075A1 1 0 0 1 185 47.0074L185 96.7774A1 1 0 0 1 184.0548 97.7759A17.25 17.25 0 0 0 176.2468 100.1358A1 1 0 0 1 174.9067 99.828Z" fill="#6b6b6b" stroke="#000" stroke-linejoin="round"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:14px;font-family:sans-serif;" transform="translate(360 195.8228)" fill="#b1b1b1">AntPool</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(10 171.4589)" fill="#b1b1b1">F2Pool</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" y="-7" transform="translate(10 116.9928)" fill="#b1b1b1">Binance</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" y="7" transform="translate(10 116.9928)" fill="#b1b1b1">Pool</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(10 73.841)" fill="#b1b1b1">ViaBTC</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" xml:space="preserve" transform="translate(10 50.6924)" fill="#b1b1b1">MARA Pool</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;" transform="translate(10 34.5924)" fill="#b1b1b1">Other</text>
+<polyline points="246.2 83.2 259.6 76.3 271 76.3" fill="none" stroke="#D81B60" stroke-width="3"></polyline>
+<path d="M185 42.0068A1 1 0 0 1 186.0137 41.0069A74 74 0 0 1 246.0929 156.7571A1 1 0 0 1 244.6918 157.0106L199.9019 125.4878A1 1 0 0 1 199.6294 124.1402A17.25 17.25 0 0 0 185.9452 97.7759A1 1 0 0 1 185 96.7774Z" fill="rgb(237,29,105)" stroke="#000" stroke-linejoin="round" filter="url(#zr12-s0)"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:14px;font-family:sans-serif;" xml:space="preserve" transform="translate(360 76.3026)" fill="#b1b1b1">Foundry USA</text>
+<defs >
+<filter id="zr12-s0" x="-100%" y="-100%" width="300%" height="300%">
+<feDropShadow dx="0" dy="0" stdDeviation="20 20" flood-color="rgb(0,0,0)" flood-opacity="0.75"></feDropShadow>
+</filter>
+</defs>
+</svg>
