@@ -1,19 +1,20 @@
-- 👋 Hi, I’m @Pjrich1313
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+# Hi there 👋, I'm Pamela (Pjrich1313)
 
-Hi [Contributor's GitHub Handle],
+## About Me
+- Passionate about technology, data, and blockchain.
+- Interested in AI agents, crypto, and open-source collaboration.
 
-I'm Pamela from the [agents.md](https://github.com/agentsmd/agents.md) repository. I really appreciate your contributions to the project, especially [specific details about their contribution, e.g., PR #158].
+## My Graphs & Analytics
 
-I'm currently looking to compensate contributors and collaborators for their time and efforts. If you're interested, please let me know your pricing and any terms you'd like to discuss.
+### Block Rewards (3M)
+![Block Rewards](block-rewards-3m-1686877021%202.svg)
 
-Best regards,  
-Pamela (Pjrich1313)
-Pjrich1313/Pjrich1313 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+### Pools Ranking (1W)
+![Pools Ranking](pools-ranking-1w-1686699570.svg)
+
+## Connect With Me
+- Reach out via GitHub or check out my contributions.
+
+---
+
+*This is my GitHub profile README.*
