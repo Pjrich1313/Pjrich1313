@@ -1,8 +1,22 @@
-Hi [Contributor's GitHub Handle],
+# Pamela's AI Agent
 
-I'm Pamela from the [agents.md](https://github.com/agentsmd/agents.md) repository. I really appreciate your contributions to the project, especially [specific details about their contribution, e.g., PR #158].
+## What it is
+An AI coding agent that lives in Pamela's GitHub repos and helps with day-to-day development work.
 
-I'm currently looking to compensate contributors and collaborators for their time and efforts. If you're interested, please let me know your pricing and any terms you'd like to discuss.
+## What it does
+- Reads and writes files across her repositories
+- Reviews pull requests and suggests fixes
+- Audits repo structure, landmarks, and stale configs
+- Helps wire up Copilot, VS Code, and GitHub integrations
+- Answers questions about her code, blockchain data, and open-source projects
 
-Best regards,  
+## How to reach it
+- GitHub: @Pjrich1313
+- Email: pamelacarr1313@icloud.com
+- Location: Osceola, Iowa
+
+## Terms for contributors
+Interested in collaborating or getting compensated for your work? Reply with your pricing and any terms you'd like to discuss, and we'll go from there.
+
+Best regards,
 Pamela (Pjrich1313)
