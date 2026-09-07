@@ -1,0 +1,63 @@
+name: SLSA Provenance
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      hashes: ${{ steps.hash.outputs.hashes }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4.1.7
+
+      - name: Set up Node
+        uses: actions/setup-node@60edb5eef795f14cb499751b6703da0b67e7d4ad # v4.0.2
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        if: hashFiles('package.json') != ''
+        run: npm ci
+
+      - name: Build Wrangler bundle
+        run: npx wrangler deploy --dry-run --outdir=dist
+
+      - name: Generate hashes
+        id: hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f dist/wrangler-bundle.js ]; then
+            echo "::error::dist/wrangler-bundle.js not found after build"
+            ls -la dist || true
+            exit 1
+          fi
+          echo "hashes=$(sha256sum dist/wrangler-bundle.js | base64 -w0)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Wrangler bundle
+        uses: actions/upload-artifact@834a144ee995460fba8ed112a2fc961b36a5cbca # v4.3.6
+        with:
+          name: wrangler-bundle
+          path: dist/wrangler-bundle.js
+          if-no-files-found: error
+          retention-days: 5
+
+  provenance:
+    needs: [build]
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
+    with:
+      base64-subjects: ${{ needs.build.outputs.hashes }}
+      private-repository: true
+      upload-assets: false
