@@ -3,6 +3,16 @@
 ## About Me
 - Passionate about technology, data, and blockchain.
 - Interested in AI agents, crypto, and open-source collaboration.
+- Building personal blockchain/crypto projects, smart contracts, and brand assets (Sealpath, Chance Lab, etc.).
+
+## Audit & Protection
+This profile and associated repositories are under active audit for landmarks, structure, timestamps, and integrity.
+
+- See [PROTECTED.md](PROTECTED.md) for protection rules and authorized access.
+- See [agents.md](agents.md) for the AI coding agent.
+- Workflows: Audit and Closure, SLSA Provenance.
+
+**Status:** Audit initiated. Original work is solid and preserved. No unauthorized alterations or external access.
 
 ## My Graphs & Analytics
 
@@ -13,8 +23,10 @@
 ![Pools Ranking](pools-ranking-1w-1686699570.svg)
 
 ## Connect With Me
-- Reach out via GitHub or check out my contributions.
+- GitHub: [@Pjrich1313](https://github.com/Pjrich1313)
+- Email: pamelacarr1313@icloud.com
+- Location: Osceola, Iowa
 
 ---
 
-*This is my GitHub profile README.*
+*This is my GitHub profile README. Published and under audit as of November 6, 2026.*
