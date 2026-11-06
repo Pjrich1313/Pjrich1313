@@ -1,4 +1,4 @@
-name: SLSA Provenance
+name: Artifact Attestations (Provenance)
 
 on:
   push:
@@ -6,52 +6,28 @@ on:
   workflow_dispatch:
 
 permissions:
+  id-token: write
   contents: read
+  attestations: write
 
 jobs:
-  build:
+  attest:
     runs-on: ubuntu-latest
-    outputs:
-      hashes: ${{ steps.hash.outputs.hashes }}
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4.1.7
+        uses: actions/checkout@v4
 
-      - name: Generate hashes of protected/key files
-        id: hash
-        shell: bash
+      - name: Create protected files archive
         run: |
           set -euo pipefail
-          # Hash the core protected and config files for provenance
-          files=(
-            "README.md"
-            "PROTECTED.md"
-            "agents.md"
-            "CODEOWNERS"
-            ".github/workflows/audit-and-closure.yml"
-            ".github/workflows/slsa-provenance.yml"
-          )
-          hashes=""
-          for f in "${files[@]}"; do
-            if [ -f "$f" ]; then
-              h=$(sha256sum "$f" | awk '{print $1}')
-              hashes+="${h}:$(basename "$f")\n"
-              echo "Hashed $f -> $h"
-            else
-              echo "::warning::File $f not found, skipping"
-            fi
-          done
-          # SLSA generator expects base64 of the subjects list (sha256:filename lines)
-          echo "hashes=$(printf '%s' "$hashes" | base64 -w0)" >> "$GITHUB_OUTPUT"
+          mkdir -p protected-archive
+          cp -v README.md PROTECTED.md agents.md CODEOWNERS protected-archive/ || true
+          cp -v .github/workflows/*.yml protected-archive/ || true
+          tar -czf protected-files.tar.gz -C protected-archive .
+          ls -lh protected-files.tar.gz
 
-  provenance:
-    needs: [build]
-    permissions:
-      actions: read
-      id-token: write
-      contents: write
-    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
-    with:
-      base64-subjects: ${{ needs.build.outputs.hashes }}
-      private-repository: false
-      upload-assets: false
+      - name: Generate artifact attestation
+        uses: actions/attest@v4
+        with:
+          subject-path: protected-files.tar.gz
+          show-summary: true
