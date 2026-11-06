@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Check dependency graph status
         id: dependency_graph
@@ -30,17 +30,17 @@ jobs:
           echo "Dependency graph status: ${status}"
 
       - name: Dependency review
-        if: ${{ steps.dependency_graph.outputs.status == 'enabled' }}
-        uses: actions/dependency-review-action@v4
+        if: steps.dependency_graph.outputs.status == 'enabled'
+        uses: actions/dependency-review-action@v5
 
       - name: Dependency review skipped
-        if: ${{ steps.dependency_graph.outputs.status != 'enabled' }}
+        if: steps.dependency_graph.outputs.status != 'enabled'
         run: |
           echo "Dependency review skipped because dependency graph status is '${{ steps.dependency_graph.outputs.status }}' (expected: 'enabled')."
 
   auto_merge:
     name: Auto-merge PR
-    if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'auto-merge') }}
+    if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'auto-merge')
     needs: audit
     runs-on: ubuntu-latest
     permissions:
@@ -48,8 +48,6 @@ jobs:
       pull-requests: write
     steps:
       - name: Merge pull request
-        uses: peter-evans/merge-pull-request@v3
-        with:
-          pull-request: ${{ github.event.pull_request.number }}
-          merge-method: squash
-          delete-branch: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --squash --delete-branch
