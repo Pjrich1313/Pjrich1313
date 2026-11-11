@@ -33,4 +33,4 @@ This profile and associated repositories are under active audit for landmarks, s
 
 ## License
 
-Licensed under either of the Apache License, Version 2.0 (LICENSE-APACHE) or the MIT license (LICENSE-MIT), at your option. Copyright (c) 2026 Pamela Richardson.
+All rights reserved. Use requires a written license signed by Pamela Richardson, with a default fee of 10% of all revenue earned from use of the work.
