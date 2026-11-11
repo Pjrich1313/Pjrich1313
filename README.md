@@ -30,3 +30,7 @@ This profile and associated repositories are under active audit for landmarks, s
 ---
 
 *This is my GitHub profile README. Published and under audit as of November 6, 2026.*
+
+## License
+
+Licensed under either of the Apache License, Version 2.0 (LICENSE-APACHE) or the MIT license (LICENSE-MIT), at your option. Copyright (c) 2026 Pamela Richardson.
