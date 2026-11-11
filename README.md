@@ -34,3 +34,5 @@ This profile and associated repositories are under active audit for landmarks, s
 ## License
 
 All rights reserved. Use requires a written license signed by Pamela Richardson, with a default fee of 10% of all revenue earned from use of the work.
+
+See NOTICE.md.
