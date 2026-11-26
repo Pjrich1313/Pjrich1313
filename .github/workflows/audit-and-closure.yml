@@ -38,16 +38,3 @@ jobs:
         run: |
           echo "Dependency review skipped because dependency graph status is '${{ steps.dependency_graph.outputs.status }}' (expected: 'enabled')."
 
-  auto_merge:
-    name: Auto-merge PR
-    if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'auto-merge')
-    needs: audit
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - name: Merge pull request
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh pr merge "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}" --squash --delete-branch
