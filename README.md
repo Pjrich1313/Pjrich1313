@@ -30,3 +30,9 @@ This profile and associated repositories are under active audit for landmarks, s
 ---
 
 *This is my GitHub profile README. Published and under audit as of November 6, 2026.*
+
+## License
+
+All rights reserved. Use requires a written license signed by Pamela Richardson, with a default fee of 10% of all revenue earned from use of the work.
+
+See NOTICE.md.
