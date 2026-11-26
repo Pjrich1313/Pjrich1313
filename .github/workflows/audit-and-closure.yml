@@ -31,7 +31,7 @@ jobs:
 
       - name: Dependency review
         if: steps.dependency_graph.outputs.status == 'enabled'
-        uses: actions/dependency-review-action@v5
+        uses: actions/dependency-review-action@v5.0.1
 
       - name: Dependency review skipped
         if: steps.dependency_graph.outputs.status != 'enabled'
